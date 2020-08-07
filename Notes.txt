@@ -1,0 +1,38 @@
+API Query Language
+Created By Facebook
+Open source in 2015
+Its a Specification
+Wraps REST APIs
+Single Endpoint
+Schema Based
+
+No wildcard support: Reasons:
+	1) App braks in obvious ways
+	2) Overfetching on newly added Relations
+Need to explicitly tell which attributes to fetch (* not supported)
+Solution: Fragments
+Declaration: fragment UserFragment on Users {
+	id,
+	firstname,
+	lastname
+}
+Usgae: FetchUsers {
+	users(id : 2) {
+		field,
+		UserFragment,
+		anotherfield
+	}
+}
+
+Advantages over REST:
+	1) Resolves overfetching (Avoid fetching all the associated relations data and fetch only specified data)
+	2) Resolves underfetching (Fetching specified multiple related/non-related entities in a request)
+	3) Supports multiple entities updatation in single request (related/non-related/both)
+	4) Faster
+	5) Simpler
+
+DataFlow:	Database(/ any DataSource)---->JDBC/JPA---->GraphQL---->Endpoint
+
+GraphQL in Java:
+	1) GraphQL-Java LIB
+	2) GraphQL-SPQR
