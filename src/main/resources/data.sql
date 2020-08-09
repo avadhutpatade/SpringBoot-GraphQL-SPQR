@@ -1,0 +1,11 @@
+DROP ALL OBJECTS;
+
+CREATE TABLE book (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(255) NOT NULL,
+	total_pages INT NOT NULL,
+	isbn VARCHAR(255) NOT NULL
+);
+
+INSERT INTO book VALUES (NULL, 'Introduction to Algorithms', 1312, '9788120340077');
+INSERT INTO book VALUES (NULL, 'Data Structures using C and C++', 672, '9788120311770');
